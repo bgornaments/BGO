@@ -1,0 +1,70 @@
+{
+  "C:\\Users\\Simran Jha\\Desktop\\Task": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.4",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\Simran Jha\\Desktop\\Task",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "email-sender",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "environment": {
+          "SENDGRID_API_KEY": "<REDACTED>"
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "sendEmail": {
+          "handler": "handler.sendEmail",
+          "events": [
+            {
+              "http": {
+                "path": "send-email",
+                "method": "post"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serviceRawFile": "service: email-sender\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs14.x\r\n  environment:\r\n    SENDGRID_API_KEY: ${env:SENDGRID_API_KEY}\r\n\r\nplugins:\r\n  - serverless-offline\r\n\r\nfunctions:\r\n  sendEmail:\r\n    handler: handler.sendEmail\r\n    events:\r\n      - http:\r\n          path: send-email\r\n          method: post\r\n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "error": {
+      "message": "AWS credentials missing or invalid. Run \"serverless\" to set up AWS credentials, or learn more in our docs: http://slss.io/aws-creds-setup. Original error from AWS: Could not load credentials from any providers",
+      "code": "AWS_CREDENTIALS_MISSING"
+    },
+    "machineId": "0eef7a86bd1c01bd38b90e362573825d",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "999c7201-3888-400f-bac0-3794b31f4ae5",
+    "orgName": "simranjha01",
+    "userId": "86qFVCvhjXQHCtptmY",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": true,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "simranjha01",
+    "subscription": null,
+    "userEmail": "jhasimran793@gmail.com",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
